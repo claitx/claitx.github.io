@@ -14,8 +14,8 @@
         /* Custom CSS to blend Bootstrap and Tailwind, and add specific mysterious styles */
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460); /* Dark, subtle gradient */
-            color: #e0e0e0; /* Light text for contrast */
+            background: linear-gradient(135deg, #e0f2f7, #c1e4f0, #a2d7eb); /* Light, subtle gradient */
+            color: #333; /* Dark text for contrast */
             min-height: 100vh; /* Full viewport height */
             display: flex;
             align-items: center;
@@ -25,34 +25,34 @@
         }
         .container-fluid {
             backdrop-filter: blur(5px); /* Subtle blur behind content */
-            background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent dark overlay */
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent light overlay */
             border-radius: 20px; /* Rounded corners */
             padding: 40px;
-            box-shadow: 0 0 30px rgba(0, 255, 255, 0.1); /* Subtle glow effect */
+            box-shadow: 0 0 30px rgba(0, 150, 170, 0.1); /* Subtle glow effect for light theme */
             animation: fadeIn 1.5s ease-out; /* Fade in animation */
         }
         h1 {
-            color: #00bcd4; /* Accent color for title */
+            color: #007bff; /* Accent color for title (Bootstrap primary blue) */
             letter-spacing: 2px;
             font-weight: 700;
-            text-shadow: 0 0 10px rgba(0, 255, 255, 0.5); /* Text glow */
+            text-shadow: 0 0 8px rgba(0, 123, 255, 0.3); /* Text glow for light theme */
         }
         p {
             font-weight: 300;
             font-size: 1.15rem;
             line-height: 1.8;
             margin-bottom: 25px;
-            color: #c0c0c0;
+            color: #555;
         }
         .coming-soon {
             font-size: 1.8rem;
             font-weight: 600;
-            color: #ffffff;
+            color: #0056b3; /* Darker blue for contrast */
             animation: pulse 2s infinite alternate; /* Pulsating effect */
         }
         .action-button {
-            background-color: #00bcd4; /* Accent color for button */
-            color: #1a1a2e; /* Dark text for button */
+            background-color: #007bff; /* Accent color for button (Bootstrap primary blue) */
+            color: #ffffff; /* Light text for button */
             padding: 12px 30px;
             border-radius: 10px;
             text-decoration: none;
@@ -61,12 +61,12 @@
             letter-spacing: 1px;
             border: none;
             cursor: pointer;
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+            box-shadow: 0 0 15px rgba(0, 123, 255, 0.3);
         }
         .action-button:hover {
-            background-color: #0097a7;
+            background-color: #0056b3;
             transform: translateY(-3px); /* Lift effect on hover */
-            box-shadow: 0 5px 20px rgba(0, 255, 255, 0.5);
+            box-shadow: 0 5px 20px rgba(0, 123, 255, 0.5);
         }
         footer {
             margin-top: 40px;
@@ -84,13 +84,38 @@
             from { transform: scale(1); opacity: 1; }
             to { transform: scale(1.05); opacity: 0.8; }
         }
+
+        /* Styling for the SVG image */
+        .claitx-logo {
+            width: 100px; /* Set your desired width */
+            height: 100px; /* Set your desired height */
+            /* In a light theme, you might want to adjust the SVG's internal colors
+               or add a darker filter if it's too bright.
+               filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.1)); */
+        }
     </style>
 </head>
 <body>
     <div class="container-fluid text-center max-w-2xl mx-auto p-8 rounded-2xl shadow-xl flex flex-col items-center justify-center">
-        <!-- Company Logo/Icon placeholder (can be replaced with an SVG or image) -->
-        <div class="text-6xl mb-6 text-cyan-400">
-            &#9733; <!-- Star icon for a touch of mystery -->
+        <!-- Custom ClaiTX Logo (IMG tag for external SVG file) -->
+        <div class="mb-6">
+            <!-- Replace 'your-logo.svg' with the actual path to your SVG file -->
+            <img src="your-logo.svg" alt="ClaiTX Logo" class="claitx-logo">
+            <!--
+                If your SVG file is in a subfolder, e.g., 'images/your-logo.svg',
+                the src would be: <img src="images/your-logo.svg" alt="ClaiTX Logo" class="claitx-logo">
+            -->
+
+            <!--
+                Original Inline SVG (commented out for reference, remove if not needed)
+                <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-cyan-400">
+                    <path d="M50 5 L95 25 L95 75 L50 95 L5 75 L5 25 L50 5 Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+                    <path d="M25 40 L50 25 L75 40 L50 55 L25 40 Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+                    <path d="M50 55 L50 95" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+                    <path d="M25 40 L5 75" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+                    <path d="M75 40 L95 75" stroke="currentColor" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+                </svg>
+            -->
         </div>
 
         <h1 class="text-5xl md:text-6xl font-bold mb-4">ClaiTX</h1>
