@@ -32,13 +32,13 @@
             padding: 40px;
             box-shadow: 0 0 30px rgba(0, 150, 170, 0.1); /* Subtle glow effect for light theme */
             animation: fadeIn 1.5s ease-out; /* Fade in animation */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            max-width: 800px; /* Adjusted max-width for better layout */
         }
-        h1 {
-            color: #007bff; /* Accent color for title (Bootstrap primary blue) */
-            letter-spacing: 2px;
-            font-weight: 700;
-            text-shadow: 0 0 8px rgba(0, 123, 255, 0.3); /* Text glow for light theme */
-        }
+        /* Removed unused h1 style */
         p {
             font-weight: 300;
             font-size: 1.15rem;
@@ -50,6 +50,7 @@
             font-size: 1.8rem;
             font-weight: 600;
             color: #0056b3; /* Darker blue for contrast */
+            animation: pulse 2s infinite alternate; /* Pulsating effect */
         }
         .action-button {
             background-color: #007bff; /* Accent color for button (Bootstrap primary blue) */
@@ -86,29 +87,43 @@
             to { transform: scale(1.05); opacity: 0.8; }
         }
 
-        /* Styling for the SVG directly in HTML */
-        .claitx-logo-inline svg {
-            width: 150px; /* Adjusted width for better visibility of text */
+        /* Styling for the SVG image using <img> tag */
+        .claitx-logo {
+            width: 200px; /* Adjusted width for a reasonably small logo (was 100px) */
             height: auto; /* Maintain aspect ratio */
-            overflow: visible; /* Ensure text is not clipped if it overflows viewBox */
+            /* No need for margin-bottom here as it's on the parent div now */
         }
 
-        /* Override SVG internal styles for light theme */
-        .claitx-logo-inline .cls-1,
-        .claitx-logo-inline .cls-2 {
-            fill: #0056b3; /* Darker blue from light theme for text and outline shapes */
-        }
-        .claitx-logo-inline .cls-3 {
-            fill: #007bff; /* Primary blue from light theme for inner shapes */
+        /* Overrides for inline SVG removed as we are using an <img> tag */
+        /* .claitx-logo-inline svg, .claitx-logo-inline .cls-1, .claitx-logo-inline .cls-2, .claitx-logo-inline .cls-3 are removed */
+
+        /* Responsive adjustments for overall layout */
+        @media (max-width: 768px) {
+            .intro-statement {
+                font-size: 1.2rem; /* Smaller font on mobile */
+                margin-top: 15px;
+                margin-bottom: 20px;
+            }
+            .container-fluid {
+                padding: 20px;
+            }
+            .claitx-logo { /* Targeting the img for responsive adjustments */
+                width: 160px; /* Smaller logo on mobile (was 80px) */
+            }
         }
     </style>
 </head>
 <body>
     <div class="container-fluid text-center max-w-2xl mx-auto p-8 rounded-2xl shadow-xl flex flex-col items-center justify-center">
-        <!-- Custom ClaiTX Logo (INLINE SVG) -->
-        <img src="claitx_logo.svg" alt="ClaiTX Logo" class="claitx-logo">
+
+        <!-- Custom ClaiTX Logo (IMG tag for external SVG file) -->
         <div class="mb-6 claitx-logo-inline">
-            
+            <!-- IMPORTANT: Replace 'your-logo.svg' with the actual path to your SVG file -->
+            <img src="claitx_logo.svg" alt="ClaiTX Logo" class="claitx-logo">
+            <!--
+                If your SVG file is in a subfolder, e.g., 'images/claitx_logo.svg',
+                the src would be: <img src="images/claitx_logo.svg" alt="ClaiTX Logo" class="claitx-logo">
+            -->
         </div>
 
 
